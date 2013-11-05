@@ -1,5 +1,7 @@
 package org.schmitt.framework.serial.communicate;
 
+import gnu.io.SerialPortEventListener;
+
 /*
  * 
  *	Desenvolvido por: João Pedro Schmitt 
@@ -12,7 +14,7 @@ package org.schmitt.framework.serial.communicate;
  *  
  */
 
-public interface SerialSession {
+public interface SerialSession extends SerialPortEventListener {
 
 	public void close() throws SerialPortException;
 	public void open() throws SerialPortException;

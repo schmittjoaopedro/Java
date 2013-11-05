@@ -22,7 +22,7 @@ import java.util.Enumeration;
  *  
  */
 
-public class SerialFactory implements SerialPortEventListener, SerialSession {
+public class SerialFactory implements SerialSession {
 
 	/*
 	 *  Variável objeto porta
