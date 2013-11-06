@@ -1,8 +1,9 @@
 package org.schmitt.framework.serial.controller.release;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
 public class DrawServo extends JPanel {
@@ -18,7 +19,11 @@ public class DrawServo extends JPanel {
 	private int centerY;
 	private int diameter;
 
-	public DrawServo(double angulation, int servo, int centerX, int centerY, int diameter){
+	public DrawServo(){
+		this.setBorder(BorderFactory.createLineBorder(Color.red, 2));
+	}
+	
+	public void drawServo(double angulation, int servo, int centerX, int centerY, int diameter){
 		this.setAngulation(angulation);
 		this.setServoIndentification(servo);
 		this.setCenterX(centerX);

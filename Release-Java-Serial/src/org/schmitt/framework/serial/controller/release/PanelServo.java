@@ -1,6 +1,5 @@
 package org.schmitt.framework.serial.controller.release;
 
-import java.awt.Label;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
@@ -29,15 +28,15 @@ public class PanelServo extends AbstractPanel {
 		this._setServoIdentification(new JLabel("Servo: " + this._getServoNumerate()));
 		this._setServoSliderAngulation(new JSlider());
 		this._setServoLabelAngulation(new JLabel("000"));
-		this._setServoRepresentate(new DrawServo(this._getServoAngulation(),
-				this._getServoNumerate(), this.getHeight()/2, this.getWidth()/2, 100));
+		this._setServoRepresentate(new DrawServo());
+		//this._getServoRepresentate().drawServo(this._getServoAngulation(),
+		//		this._getServoNumerate(), 100, 100, 100);
 		
 		super.getControllersPanel().add(this._getServoIdentification());
 		super.getControllersPanel().add(this._getServoSliderAngulation());
 		super.getControllersPanel().add(this._getServoLabelAngulation());
+		super.getDisplayPanel().add(this._getServoRepresentate());
 		
-		super.getDisplayPanel().add(new Label("Teste"));
-
 		this._getServoSliderAngulation().addChangeListener(new ChangeListener() {
 			@Override
 			public void stateChanged(ChangeEvent e) {
@@ -45,7 +44,9 @@ public class PanelServo extends AbstractPanel {
 			    if (!source.getValueIsAdjusting()) {
 			    	_setServoAngulation(_getServoSliderAngulation().getValue());
 					_getServoLabelAngulation().setText(_getServoAngulation()+"º");
-					//try { _getSession().write(contraintLetter()); } catch(Exception er) { er.printStackTrace(); }	
+					//try { _getSession().write(contraintLetter()); } catch(Exception er) { er.printStackTrace(); }
+					_getServoRepresentate().setAngulation(_getServoAngulation());
+					_getServoRepresentate().repaint();
 			    }
 			}
 		});
