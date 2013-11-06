@@ -1,7 +1,6 @@
 package org.schmitt.framework.serial.controller.release;
 
 import java.awt.BorderLayout;
-
 import javax.swing.JPanel;
 
 import org.schmitt.framework.serial.communicate.GetSessionSerial;
@@ -19,12 +18,10 @@ public abstract class AbstractPanel extends JPanel {
 	
 	public AbstractPanel(){
 		this.setLayout(new BorderLayout());
-		
 		this.setControllersPanel(new JPanel());
 		this.setDisplayPanel(new JPanel());
-		
 		this.add(this.getControllersPanel(), BorderLayout.NORTH);
-		this.add(this.getControllersPanel(), BorderLayout.CENTER);
+		this.add(this.getDisplayPanel(), BorderLayout.CENTER);
 	}
 
 	protected SerialSession _getSession(){
