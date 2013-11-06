@@ -18,6 +18,8 @@ public class PanelServo extends AbstractPanel {
 	private JSlider servoSliderAngulation;
 	private JLabel servoLabelAngulation;
 	private JLabel servoIdentification;
+	private int centroX;
+	private int centroY;
 	
 	public PanelServo(){ super(); }
 	
@@ -30,12 +32,13 @@ public class PanelServo extends AbstractPanel {
 		this._setServoLabelAngulation(new JLabel("000"));
 		this._setServoRepresentate(new DrawServo());
 		//this._getServoRepresentate().drawServo(this._getServoAngulation(),
-		//		this._getServoNumerate(), 100, 100, 100);
+		//		this._getServoNumerate(), this.getCentroX(), this.getCentroY(), 100);
 		
 		super.getControllersPanel().add(this._getServoIdentification());
 		super.getControllersPanel().add(this._getServoSliderAngulation());
 		super.getControllersPanel().add(this._getServoLabelAngulation());
-		super.getDisplayPanel().add(this._getServoRepresentate());
+		
+		//this.add(this._getServoRepresentate());
 		
 		this._getServoSliderAngulation().addChangeListener(new ChangeListener() {
 			@Override
@@ -69,5 +72,9 @@ public class PanelServo extends AbstractPanel {
 	public void _setServoLabelAngulation(JLabel servoLabelAngulation) { this.servoLabelAngulation = servoLabelAngulation; }
 	public JLabel _getServoIdentification() { return servoIdentification; }
 	public void _setServoIdentification(JLabel servoIdentification) { this.servoIdentification = servoIdentification; }
+	public int getCentroX() { return centroX; }
+	public void setCentroX(int centroX) { this.centroX = centroX; }
+	public int getCentroY() { return centroY; }
+	public void setCentroY(int centroY) { this.centroY = centroY; }
 	
 }

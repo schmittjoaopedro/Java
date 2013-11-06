@@ -24,7 +24,7 @@ public abstract class AbstractPanel extends JPanel {
 		this.setControllersPanel(new JPanel());
 		this.setDisplayPanel(new JPanel());
 		this.add(this.getControllersPanel(), BorderLayout.NORTH);
-		this.add(this.getDisplayPanel(), BorderLayout.CENTER);
+		this.add(this.getDisplayPanel(), BorderLayout.EAST);
 		this.setBorder(BorderFactory.createLineBorder(Color.darkGray, 2));
 	}
 
