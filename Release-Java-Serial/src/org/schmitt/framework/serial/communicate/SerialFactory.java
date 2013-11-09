@@ -3,6 +3,7 @@ package org.schmitt.framework.serial.communicate;
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -88,6 +89,7 @@ public class SerialFactory implements SerialSession {
 			}
 		}
 	}
+	
 	
 	/* 
 	 * Método de abertura da conexão

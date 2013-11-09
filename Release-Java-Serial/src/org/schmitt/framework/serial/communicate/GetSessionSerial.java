@@ -3,6 +3,7 @@ package org.schmitt.framework.serial.communicate;
 public class GetSessionSerial {
 
 	private static SerialSession session;
+	public static String selectedCom = "";
 	
 	static {
 		try{
@@ -12,8 +13,13 @@ public class GetSessionSerial {
 		}
 	}
 	
-	public static SerialSession getInstance(){
+	public static SerialSession getInstance(String com){
+		session = new SerialFactory(com, 9600, 1000000);
 		return session;
 	}
 	
+	public static SerialSession getInstance(){
+		return session;
+	}
+
 }
