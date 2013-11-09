@@ -21,14 +21,12 @@ public class PanelServo extends AbstractPanel {
 	private int centroX;
 	private int centroY;
 	
-	public PanelServo(){ super(); }
-	
 	public PanelServo(int servo, double angulation){
 		super();
 		this._setServoNumerate(servo);
 		this._setServoAngulation(angulation);
 		this._setServoIdentification(new JLabel("Servo: " + this._getServoNumerate()));
-		this._setServoSliderAngulation(new JSlider());
+		this._setServoSliderAngulation(new JSlider(0,180));
 		this._setServoLabelAngulation(new JLabel("000"));
 		this._setServoRepresentate(new DrawServo());
 		//this._getServoRepresentate().drawServo(this._getServoAngulation(),
@@ -47,7 +45,7 @@ public class PanelServo extends AbstractPanel {
 			    if (!source.getValueIsAdjusting()) {
 			    	_setServoAngulation(_getServoSliderAngulation().getValue());
 					_getServoLabelAngulation().setText(_getServoAngulation()+"º");
-					//try { _getSession().write(contraintLetter()); } catch(Exception er) { er.printStackTrace(); }
+					try { _getSession().write(contraintLetter()); } catch(Exception er) { er.printStackTrace(); }
 					_getServoRepresentate().setAngulation(_getServoAngulation());
 					_getServoRepresentate().repaint();
 			    }
