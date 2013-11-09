@@ -1,6 +1,7 @@
 package org.schmitt.framework.serial.controller.release;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -45,7 +46,11 @@ public class PanelServo extends AbstractPanel {
 			    if (!source.getValueIsAdjusting()) {
 			    	_setServoAngulation(_getServoSliderAngulation().getValue());
 					_getServoLabelAngulation().setText(_getServoAngulation()+"º");
-					try { _getSession().write(contraintLetter()); } catch(Exception er) { er.printStackTrace(); }
+					try { 
+						_getSession().write(contraintLetter());
+					} catch(Exception er) {
+						JOptionPane.showMessageDialog(null, "Please check your connections with COM port, and try connect again!");
+					}
 					_getServoRepresentate().setAngulation(_getServoAngulation());
 					_getServoRepresentate().repaint();
 			    }
