@@ -12,7 +12,7 @@
   
   <!-- Add static resources with js/css and others -->
   <mvc:resources mapping="/resources/**" location="/resources/" />
-  
+    
   <!-- Map simple view name such as "test" into /WEB-INF/views/test.jsp -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/views/" />
@@ -42,9 +42,9 @@
        username root and blank password. Change below if it's not the case -->
   <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-    <property name="url" value="jdbc:mysql://localhost:3306/imobiliaria"/>
+    <property name="url" value="jdbc:mysql://localhost:2013/imobiliaria"/>
     <property name="username" value="root"/>
-    <property name="password" value="system"/>
+    <property name="password" value="joao2505"/>
     <!-- <property name="validationQuery" value="SELECT 1"/> -->
   </bean>
    

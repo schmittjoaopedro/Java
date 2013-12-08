@@ -18,7 +18,12 @@
   
   <dependencies>
   
-  
+  <!-- Filter dependencie -->
+  <dependency>
+    <groupId>org.mortbay.jetty</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>3.0.20090124</version>
+  </dependency>
   
   <!-- Spring dependencies -->
   <dependency>

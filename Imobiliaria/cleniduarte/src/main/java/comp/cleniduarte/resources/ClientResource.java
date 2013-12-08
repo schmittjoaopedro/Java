@@ -20,7 +20,7 @@ public class ClientResource {
 	@RequestMapping("/list")
 	@ResponseBody
 	public Object list(){
-		return this.clienteService.list();
+		return this.clienteService.findAll();
 	}
 	
 	@RequestMapping(value = "/save", method=RequestMethod.POST)

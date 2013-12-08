@@ -1,0 +1,21 @@
+.content {
+	text-decoration: none;
+	width: 1200px;
+	margin: 0px auto;
+	padding : 0;
+	text-align: center;
+}
+
+.header {
+	height : 100px;
+	background-color: red;
+}
+
+.contentPanel {
+	height: 960px;
+}
+
+.administratorPanel {
+	height: 960px;
+	background-color: green;
+}

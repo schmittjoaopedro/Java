@@ -1,6 +1,5 @@
 package comp.cleniduarte.beans;
 
-import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,7 +25,7 @@ public class Client implements ISimplesKeyBean {
 	private String name;
 	
 	@Column(name = "cpf_cnpj")
-	private Integer cpfOrCnpj;
+	private String cpfOrCnpj;
 	
 	@Column(name = "email", length = 60)
 	private String mail;
@@ -35,7 +34,7 @@ public class Client implements ISimplesKeyBean {
 	private Integer telephone;
 	
 	@Column(name = "data_nascimento")
-	private Date dateNascimento;
+	private Date dateBirth;
 	
 	@Column(name = "tel_celular")
 	private Integer telephoneMobile;
@@ -43,10 +42,6 @@ public class Client implements ISimplesKeyBean {
 	@Column(name = "tel_outro")
 	private Integer telephoneOther;
 	
-	@Column(name = "tipo_operacao", columnDefinition = "enum('AnuncioVenda','AnuncioLocacao','ProcuraVenda','ProcuraLocacao')")
-	@Enumerated(EnumType.STRING)
-	private TipoOperacao tipoOperacao;
-
 	public Client() {}
 	
 	public Long getId() {
@@ -61,10 +56,10 @@ public class Client implements ISimplesKeyBean {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getCpfOrCnpj() {
+	public String getCpfOrCnpj() {
 		return cpfOrCnpj;
 	}
-	public void setCpfOrCnpj(Integer cpfOrCnpj) {
+	public void setCpfOrCnpj(String cpfOrCnpj) {
 		this.cpfOrCnpj = cpfOrCnpj;
 	}
 	public String getMail() {
@@ -80,10 +75,10 @@ public class Client implements ISimplesKeyBean {
 		this.telephone = telephone;
 	}
 	public Date getDateNascimento() {
-		return dateNascimento;
+		return dateBirth;
 	}
-	public void setDateNascimento(Date dateNascimento) {
-		this.dateNascimento = dateNascimento;
+	public void setDateNascimento(Date dateBirth) {
+		this.dateBirth = dateBirth;
 	}
 	public Integer getTelephoneMobile() {
 		return telephoneMobile;
@@ -96,12 +91,6 @@ public class Client implements ISimplesKeyBean {
 	}
 	public void setTelephoneOther(Integer telephoneOther) {
 		this.telephoneOther = telephoneOther;
-	}
-	public TipoOperacao getTipoOperacao() {
-		return this.tipoOperacao;
-	}
-	public void setTipoOperacao(TipoOperacao tipoOperacao) {
-		this.tipoOperacao = tipoOperacao;
 	}
 	
 }

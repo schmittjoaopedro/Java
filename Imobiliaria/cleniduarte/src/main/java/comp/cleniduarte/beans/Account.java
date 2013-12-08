@@ -33,7 +33,7 @@ public class Account implements ISimplesKeyBean {
 	private String password;
 	
 	@ManyToOne
-	@JoinColumn(name = "cd_user_type", insertable=false, updatable=false, nullable=false)
+	@JoinColumn(name = "roles_user", insertable=false, updatable=false)
 	private UserType roles;
 	
 	

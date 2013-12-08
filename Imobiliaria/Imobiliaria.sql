@@ -31,8 +31,7 @@ create table cliente(
 	telefone integer not null,
 	data_nascimento date,
 	tel_celular integer(10),
-	tel_outro integer(10),
-	tipo_operacao varchar(20)
+	tel_outro integer(10)
 );
 
 create table estado (
@@ -44,7 +43,8 @@ create table imovel(
 	cd_imovel integer not null primary key auto_increment,
 	cd_cliente integer,
 	descricao varchar(500),
-	tipo_imovel integer,
+	tipo_imovel varchar(20),
+	tipo_operacao varchar(20),
 	area_total integer,
 	area_util integer,
 	nr_vagas_garagen integer,

@@ -1,6 +1,6 @@
 package comp.cleniduarte.beans;
 
-public enum TipoOperacao {
+public enum ETypeOperation {
 	AnuncioVenda,
 	AnuncioLocacao,
 	ProcuraVenda,

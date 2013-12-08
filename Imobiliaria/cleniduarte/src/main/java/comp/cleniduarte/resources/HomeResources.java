@@ -14,5 +14,15 @@ public class HomeResources {
 	public String index(){
 		return "index";
 	}
+	
+	@RequestMapping(value = "/client", method=RequestMethod.GET)
+	public String indexClient(){
+		return "/client/index";
+	}
 
+
+	@RequestMapping(value = "/login", method=RequestMethod.GET)
+	public String admin(){
+		return "/login/index";
+	}
 }
